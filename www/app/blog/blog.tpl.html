@@ -1,0 +1,20 @@
+<ion-view view-title="Recent Posts">
+  <ion-content class="">
+    <ion-refresher pulling-icon='ion-chevron-down' pulling-text="Pull to get that dope content..." on-refresh="loadRecentPosts()"></ion-refresher>
+    <div class="has-header">
+      <div ng-repeat="post in BlogPosts" class="list card">
+        <div class="item item-divider item-dark" ng-bind-html="post.title"></div>
+        <div class="item item-body">
+          <span><strong>Posted:</strong> <span ng-bind-html="post.date | date:'MMM dd, yyyy HH:mm a'"></span></span>
+          <div class="item item-image">
+            <div ng-bind-html="post.content"></div>
+          </div>
+          <a class="item item-avatar" href="#">
+            <img src="img/ionic.png">
+            <h2>{{post.author.first_name}} {{post.author.last_name}}</h2>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

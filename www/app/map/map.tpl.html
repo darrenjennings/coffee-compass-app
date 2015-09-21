@@ -1,0 +1,11 @@
+<ion-view title="shop reviews" ng-controller="mapCtrl as vm">
+  <ion-nav-buttons side="primary">
+    <button class="button" ng-click="vm.centerOnMe()">
+      <i class="icon ion-navigate"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ui-gmap-google-map draggable="true" center="vm.map.center" zoom="vm.map.zoom">
+    </ui-gmap-google-map>
+  </ion-content>
+</ion-view>
