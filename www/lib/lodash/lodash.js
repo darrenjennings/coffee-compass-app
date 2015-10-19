@@ -253,7 +253,7 @@
   /** Detect free variable `module`. */
   var freeModule = objectTypes[typeof module] && module && !module.nodeType && module;
 
-  /** Detect free variable `global` from Node.app. */
+  /** Detect free variable `global` from Node.js. */
   var freeGlobal = freeExports && freeModule && typeof global == 'object' && global && global.Object && global;
 
   /** Detect free variable `self`. */
@@ -692,7 +692,7 @@
    *   }
    * });
    *
-   * // or creating a suped-up `defer` in Node.app
+   * // or creating a suped-up `defer` in Node.js
    * var defer = _.runInContext({ 'setTimeout': setImmediate }).defer;
    */
   function runInContext(context) {
@@ -10707,7 +10707,7 @@
      *
      * // using the `source` property to inline compiled templates for meaningful
      * // line numbers in error messages and a stack trace
-     * fs.writeFileSync(path.join(cwd, 'jst.app'), '\
+     * fs.writeFileSync(path.join(cwd, 'jst.js'), '\
      *   var JST = {\
      *     "main": ' + _.template(mainText).source + '\
      *   };\
@@ -10715,7 +10715,7 @@
      */
     function template(string, options, otherOptions) {
       // Based on John Resig's `tmpl` implementation (http://ejohn.org/blog/javascript-micro-templating/)
-      // and Laura Doktorova's doT.app (https://github.com/olado/doT).
+      // and Laura Doktorova's doT.js (https://github.com/olado/doT).
       var settings = lodash.templateSettings;
 
       if (otherOptions && isIterateeCall(string, options, otherOptions)) {
@@ -12320,7 +12320,7 @@
   // Export lodash.
   var _ = runInContext();
 
-  // Some AMD build optimizers like r.app check for condition patterns like the following:
+  // Some AMD build optimizers like r.js check for condition patterns like the following:
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
     // Expose lodash to the global object when an AMD loader is present to avoid
     // errors in cases where lodash is loaded by a script tag and not intended
@@ -12336,7 +12336,7 @@
   }
   // Check for `exports` after `define` in case a build optimizer adds an `exports` object.
   else if (freeExports && freeModule) {
-    // Export for Node.app or RingoJS.
+    // Export for Node.js or RingoJS.
     if (moduleExports) {
       (freeModule.exports = _)._ = _;
     }

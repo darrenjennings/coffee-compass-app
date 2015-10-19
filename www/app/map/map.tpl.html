@@ -1,11 +1,19 @@
-<ion-view title="shop reviews" ng-controller="mapCtrl as vm">
-  <ion-nav-buttons side="primary">
+<ion-view title="Map" ng-controller="mapCtrl as vm">
+  <ion-nav-buttons side="secondary">
     <button class="button" ng-click="vm.centerOnMe()">
       <i class="icon ion-navigate"></i>
     </button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
-    <ui-gmap-google-map draggable="true" center="vm.map.center" zoom="vm.map.zoom">
-    </ui-gmap-google-map>
+  <ion-content data-tap-disabled="true" scroll="false" class="has-header">
+    <div class="mapContainer" map-lazy-load="https://maps.googleapis.com/maps/api/js?sensor=false">
+      <map center="41,-87" zoom="3"></map>
+    </div>
+    <!--<ui-gmap-google-map draggable="true" center="vm.map.center" zoom="vm.map.zoom">
+      <ui-gmap-window show="vm.map.window.show" coords="vm.map.window.model" options="vm.map.window.options" closeclick="vm.map.window.closeClick()">
+        <div ng-non-bindable="">test</div>
+      </ui-gmap-window>
+      <ui-gmap-markers models="vm.map.markers" coords="'self'" docluster="false" events="vm.map.markersEvents" options="'options'">
+      </ui-gmap-markers>
+    </ui-gmap-google-map>-->
   </ion-content>
 </ion-view>

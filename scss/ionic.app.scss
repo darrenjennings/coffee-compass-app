@@ -17,6 +17,14 @@ $dark:                            #444 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
+$avenir-next-font-family: "Avenir Next";
+
+@font-face {
+  font-family: $avenir-next-font-family;
+  src:url("#{$ionicons-font-path}/AvenirNext-Regular.eot");
+  src:url("#{$ionicons-font-path}/AvenirNext-Regular.eot#iefix") format("embedded-opentype"),
+  url("#{$ionicons-font-path}/AvenirNext-Regular.ttf") format("truetype")
+}
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";

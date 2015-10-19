@@ -46,3 +46,4 @@ Currently developing...
 [Wordpress]:<https://wordpress.org>
 [JSON API]: <https://wordpress.org/plugins/json-api/>
 [WP Geo]: <https://wordpress.org/plugins/wp-geo/>
+![](/resources/icon.png?raw=true)

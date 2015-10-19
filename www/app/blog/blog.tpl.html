@@ -1,20 +1,17 @@
-<ion-view view-title="Recent Posts">
-  <ion-content class="">
-    <ion-refresher pulling-icon='ion-chevron-down' pulling-text="Pull to get that dope content..." on-refresh="loadRecentPosts()"></ion-refresher>
-    <div class="has-header">
-      <div ng-repeat="post in BlogPosts" class="list card">
-        <div class="item item-divider item-dark" ng-bind-html="post.title"></div>
-        <div class="item item-body">
-          <span><strong>Posted:</strong> <span ng-bind-html="post.date | date:'MMM dd, yyyy HH:mm a'"></span></span>
-          <div class="item item-image">
-            <div ng-bind-html="post.content"></div>
-          </div>
-          <a class="item item-avatar" href="#">
-            <img src="img/ionic.png">
-            <h2>{{post.author.first_name}} {{post.author.last_name}}</h2>
-          </a>
-        </div>
-      </div>
-    </div>
-  </ion-content>
+<ion-view view-title="Recent Posts" ng-controller="blogCtrl as vm">
+<ion-content class="has-header">
+  <ion-refresher pulling-icon='ion-chevron-down' pulling-text="Pull to get that dope content..." on-refresh="vm.loadRecentPosts(true)"></ion-refresher>
+    <ion-list can-swipe="true">
+    <ion-item ng-repeat="post in vm.BlogPosts" href="#/app/blog/{{post.id}}"
+              class="post-item item item-thumbnail-right item-avatar-right item-text-wrap">
+      <img ng-src="{{post.attachments[0].url}}">
+      <h2><div ng-bind-html="post.title"></div></h2>
+      <p style="font-style:italic;">{{post.date | date:"medium"}}</p>
+      <ion-option-button class="button-positive"
+                         ng-click="share(item)">
+        Share
+      </ion-option-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
 </ion-view>

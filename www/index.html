@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
-
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
-    <!-- ionic/angularjs app -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
-    <script src="cordova.js"></script>
-    <script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
-    <script src="lib/lodash/lodash.min.js"></script>
-    <script src="lib/angular-cache/dist/angular-cache.min.js"></script>
-    <script src="lib/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
-    <script src="lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
 
-    <!-- your app's app -->
-    <script src="app/app.js"></script>
-    <script src="app/common/app.common.module.js"></script>
+  <title></title>
 
-    <!--modules-->
-    <script src="app/blog/blog.module.js"></script>
-    <script src="app/map/map.module.js"></script>
+  <link href="css/ionic.app.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="lib/animate.css/animate.min.css" rel="stylesheet">
 
-    <!--controllers-->
-    <script src="app/blog/blogCtrl.js"></script>
-    <script src="app/map/mapCtrl.js"></script>
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+  -->
 
-    <!--services-->
-    <script src="app/common/services/coffeeCompassApi.service.js"></script>
+  <!-- ionic/angularjs app -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!-- third party libraries -->
+  <script src="lib/jquery/dist/jquery.min.js"></script>
 
-  </head>
-  <body ng-app="theCoffeeCompass">
-    <ion-nav-bar class="bar-dark">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
-  </body>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+  <script src="cordova.js"></script>
+  <!--<script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>-->
+  <script src="lib/lodash/lodash.min.js"></script>
+  <script src="lib/angular-cache/dist/angular-cache.min.js"></script>
+  <script src="lib/ngmap/build/scripts/ng-map.min.js"></script>
+
+  <!-- your app's app -->
+  <script src="app/app.js"></script>
+  <script src="app/common/app.common.module.js"></script>
+
+  <!--modules-->
+  <script src="app/blog/blog.module.js"></script>
+  <script src="app/map/map.module.js"></script>
+
+  <!--controllers-->
+  <script src="app/blog/blogCtrl.js"></script>
+  <script src="app/blog/blogPostCtrl.js"></script>
+  <script src="app/map/mapCtrl.js"></script>
+
+  <!--services-->
+  <script src="app/common/services/coffeeCompassApi.service.js"></script>
+
+</head>
+<body ng-app="theCoffeeCompass">
+
+<ion-nav-view></ion-nav-view>
+</body>
 </html>

@@ -1,0 +1,17 @@
+<ion-view view-title="" ng-controller="blogPostCtrl as vm">
+  <ion-content class="has-header">
+    <div class="has-header">
+        <div class="item item-body">
+          <div class="blogTitle" ng-bind-html="vm.BlogPost.title"></div>
+          <span><strong>Posted:</strong> <span ng-bind-html="vm.BlogPost.date | date:'MMM dd, yyyy HH:mm a'"></span></span>
+          <div class="item item-image">
+            <div ng-bind-html="vm.BlogPost.content"></div>
+          </div>
+          <a class="item item-avatar" href="#">
+            <h2>{{vm.BlogPost.author.first_name}} {{vm.BlogPost.author.last_name}}</h2>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
