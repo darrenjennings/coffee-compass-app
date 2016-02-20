@@ -17,9 +17,11 @@
     vm.postId = $stateParams.id;
     vm.blogPost = [];
 
-    vm.loadPost = function () {
-      coffeeCompassApi.getRecentBlogPosts(false).then(function (data) {
-        vm.BlogPost = _.find(data.posts, {id: parseInt(vm.postId)});
+    vm.loadPost = function (id) {
+      //coffeeCompassApi.getRecentBlogPosts(false).then(function (data) {
+      //vm.BlogPost = _.find(data.posts, {id: parseInt(vm.postId)});
+      coffeeCompassApi.getBlogPostById(false, id).then(function (data) {
+        vm.BlogPost = data;
       }).finally(function () {
         $scope.$broadcast('scroll.refreshComplete');
       });
@@ -31,7 +33,7 @@
 
 
     function activate() {
-      vm.loadPost();
+      vm.loadPost(vm.postId);
     }
 
   }

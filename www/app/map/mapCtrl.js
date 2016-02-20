@@ -73,7 +73,8 @@
                 "id": value.ID,
                 "show": false,
                 "map": vm.map,
-                "icon": 'http://www.thecoffeecompass.com/wp-content/uploads/compass_placemark-e1349062629635.png'
+                "icon": 'img/marker.png',
+                "size": new google.maps.Size(30, 30)
               }));
               var latlng = new google.maps.LatLng(value.latitude, value.longitude);
 
@@ -83,7 +84,7 @@
                   vm.infowindow.close();
                 }
                 vm.infowindow = new google.maps.InfoWindow({
-                  content: "<div id='iw-container'><div class='iw-title'><a class='button' href='#/blog'>"+value.post_title+"</a></div></div>"
+                  content: "<div id='iw-container'><div class='iw-title'><a class='button' href='#/app/blog/"+value.ID+"'>"+value.post_title+"h</a></div></div>"
                 });
                 removeInfoWindowCSS(vm.infowindow);
                 markers[key].info = vm.infowindow;

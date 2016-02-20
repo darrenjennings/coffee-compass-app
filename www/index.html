@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
-
   <title></title>
 
   <link href="css/ionic.app.min.css" rel="stylesheet">
@@ -17,12 +16,16 @@
 
   <!-- ionic/angularjs app -->
   <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
   <!-- third party libraries -->
   <script src="lib/jquery/dist/jquery.min.js"></script>
 
   <!-- cordova script (this will be a 404 during development) -->
+
   <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
-  <script src="cordova.js"></script>
+
+  <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+<!-- <script src="cordova.js"></script> -->
   <!--<script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>-->
   <script src="lib/lodash/lodash.min.js"></script>
   <script src="lib/angular-cache/dist/angular-cache.min.js"></script>

@@ -1,15 +1,17 @@
-<ion-view view-title="" ng-controller="blogPostCtrl as vm">
+<ion-view view-title="Blog" ng-controller="blogPostCtrl as vm">
   <ion-content class="has-header">
-    <div class="has-header">
-        <div class="item item-body">
-          <div class="blogTitle" ng-bind-html="vm.BlogPost.title"></div>
-          <span><strong>Posted:</strong> <span ng-bind-html="vm.BlogPost.date | date:'MMM dd, yyyy HH:mm a'"></span></span>
-          <div class="item item-image">
-            <div ng-bind-html="vm.BlogPost.content"></div>
-          </div>
-          <a class="item item-avatar" href="#">
-            <h2>{{vm.BlogPost.author.first_name}} {{vm.BlogPost.author.last_name}}</h2>
-          </a>
+    <div class="row responsive-sm padding" ng-show="vm.BlogPost.content">
+      <div class="col">
+        <div class="blogTitle" ng-bind-html="vm.BlogPost.title"></div>
+        <span class="">
+          <i class="icon ion-ios-calendar-outline"></i> <span ng-bind-html="vm.BlogPost.date | date:'MMM dd, yyyy HH:mm a'"></span>
+        </span><br/>
+        <span class="">
+          <strong>By </strong>
+          <span class="positive">{{vm.BlogPost.author.first_name}} {{vm.BlogPost.author.last_name}}</span>
+          </span><br/><br/>
+        <div class="item-image">
+          <div ng-bind-html="vm.BlogPost.content"></div>
         </div>
       </div>
     </div>

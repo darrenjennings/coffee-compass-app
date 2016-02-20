@@ -11,13 +11,12 @@ angular.module('theCoffeeCompass', ['ionic', 'angular-cache', 'app.common',
       if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         cordova.plugins.Keyboard.disableScroll(true);
+        window.open = cordova.InAppBrowser.open;
       }
       if (window.StatusBar) {
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
-
-
     });
   })
 

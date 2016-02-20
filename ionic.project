@@ -1,5 +1,8 @@
 {
   "name": "TheCoffeeCompass",
-  "app_id": "",
-   "gulpStartupTasks": ["sass", "watch"]
+  "app_id": "d59f24a4",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ]
 }
