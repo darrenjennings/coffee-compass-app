@@ -18,8 +18,6 @@
     vm.blogPost = [];
 
     vm.loadPost = function (id) {
-      //coffeeCompassApi.getRecentBlogPosts(false).then(function (data) {
-      //vm.BlogPost = _.find(data.posts, {id: parseInt(vm.postId)});
       coffeeCompassApi.getBlogPostById(false, id).then(function (data) {
         vm.BlogPost = data;
       }).finally(function () {
