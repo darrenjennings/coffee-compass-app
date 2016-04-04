@@ -129,7 +129,7 @@
 
       if (!forceRefresh) {
         postData = postDataCache.get(cacheKey);
-      }ion
+      }
 
       if (postData) {
         console.log("Found data inside cache", postData);
