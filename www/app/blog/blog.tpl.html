@@ -4,7 +4,7 @@
     <ion-list can-swipe="true">
     <ion-item ng-repeat="post in vm.BlogPosts" href="#/app/blog/{{post.id}}"
               class="post-item item item-thumbnail-right item-avatar-right item-text-wrap">
-      <img ng-src="{{post.attachments[0].url}}">
+      <img ng-src="{{post.attachments[0].images.thumbnail.url}}">
       <h2><div ng-bind-html="post.title"></div></h2>
       <p style="font-style:italic;">{{post.date | date:"medium"}}</p>
       <ion-option-button class="button-positive"
