@@ -11,7 +11,7 @@
   function coffeeCompassApi($timeout, $http, $q, $ionicLoading, CacheFactory) {
 
     var url = "http://www.thecoffeecompass.com/";
-    var self = this;
+    var service = this;
 
     if (!CacheFactory.get("postsCache")) {
       CacheFactory("postsCache", {
@@ -33,23 +33,11 @@
 
     postsCache.setOptions({
       onExpire: function (key, value) {
-        self.getRecentBlogPosts()
+        service.getRecentBlogPosts()
           .then(function () {
             // Blog Posts Cache was automatically refreshed
           }, function () {
             postsCache.put(key, value);
-          });
-      }
-    });
-
-    postDataCache.setOptions({
-      onExpire: function (key, value) {
-        self.getLeagueData()
-          .then(function () {
-            // Post Data Cache was automatically refreshed
-          }, function () {
-            // Error getting data. Putting expired item back in the cache
-            postDataCache.put(key, value);
           });
       }
     });
