@@ -1,0 +1,7 @@
+node_modules/
+platforms/
+plugins/
+scss/
+hooks/
+resources/
+www/lib/

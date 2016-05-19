@@ -32,7 +32,7 @@
         var location = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
         vm.map.setCenter(location);
         vm.map.setZoom(12);
-      }, function (error) {
+      }, function () {
         var alertPopup = $ionicPopup.alert({
           title: 'Sorry!',
           template: 'We won\'t be able to locate you unless you give us permission. Go into your app settings to grant access.',
@@ -41,8 +41,8 @@
           ]
         });
         $ionicLoading.hide();
-        alertPopup.then(function (res) {
-          console.log('Permission');
+        alertPopup.then(function () {
+          // Permission
         });
       }).finally(function () {
         $ionicLoading.hide();
@@ -78,7 +78,7 @@
               }));
               var latlng = new google.maps.LatLng(value.latitude, value.longitude);
 
-              markers[key].addListener('click', function (event, p) {
+              markers[key].addListener('click', function (event) {
                 vm.map.setZoom(12);
                 if (vm.infowindow) {
                   vm.infowindow.close();

@@ -21,9 +21,9 @@
       coffeeCompassApi.getBlogPostById(false, id).then(function (data) {
         vm.BlogPost = data;
       }).finally(function () {
-        $scope.$broadcast('scroll.refreshComplete');
+        vm.$broadcast('scroll.refreshComplete');
       });
-    }
+    };
 
     activate();
 
